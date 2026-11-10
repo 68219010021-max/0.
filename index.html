@@ -4,95 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Game Zone</title>
+
+    <title>🌌 Anime Adventure</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>🎮 GAME ZONE</h1>
-        <p>เว็บไซต์แนะนำเกมที่น่าสนใจ สำหรับสายเกมเมอร์</p>
+        <div class="header-content">
+            <p class="small-title">✦ WELCOME TO THE WORLD ✦</p>
+
+            <h1>🌌 ANIME ADVENTURE</h1>
+
+            <p>
+                รวมโลกแห่งการผจญภัย ตัวละครสุดเท่
+                และเรื่องราวที่น่าตื่นเต้น
+            </p>
+        </div>
     </header>
 
     <main>
 
-        <h2>🔥 เกมแนะนำ</h2>
+        <h2>⚡ เลือกหมวดหมู่</h2>
 
-        <!-- ปุ่ม Filter -->
         <div class="filters">
-            <button class="filter-btn active" data-category="all">ทั้งหมด</button>
-            <button class="filter-btn" data-category="action">⚔️ Action</button>
-            <button class="filter-btn" data-category="adventure">🗺️ Adventure</button>
-            <button class="filter-btn" data-category="rpg">🐉 RPG</button>
-        </div>
 
-        <!-- Gallery -->
-        <div class="gallery">
+            <button class="filter-btn active" data-category="all">
+                ✦ ทั้งหมด
+            </button>
 
-            <div class="card" data-category="action">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e" alt="เกม Action">
-                <div class="card-content">
-                    <h3>⚔️ Action Game</h3>
-                    <p>เกมแนวต่อสู้ที่เต็มไปด้วยความมันและความท้าทาย</p>
-                    <span>Action</span>
-                </div>
-            </div>
+            <button class="filter-btn" data-category="action">
+                ⚔️ Action
+            </button>
 
-            <div class="card" data-category="action">
-                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420" alt="เกมต่อสู้">
-                <div class="card-content">
-                    <h3>🔥 Battle Game</h3>
-                    <p>ต่อสู้กับศัตรูและเอาชนะคู่แข่งให้ได้</p>
-                    <span>Action</span>
-                </div>
-            </div>
+            <button class="filter-btn" data-category="fantasy">
+                🐉 Fantasy
+            </button>
 
-            <div class="card" data-category="adventure">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f" alt="เกม Adventure">
-                <div class="card-content">
-                    <h3>🗺️ Adventure World</h3>
-                    <p>ออกเดินทางสำรวจโลกกว้างและค้นพบสิ่งใหม่ ๆ</p>
-                    <span>Adventure</span>
-                </div>
-            </div>
-
-            <div class="card" data-category="adventure">
-                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575" alt="เกมผจญภัย">
-                <div class="card-content">
-                    <h3>🌌 Mystery World</h3>
-                    <p>ผจญภัยในโลกแห่งความลึกลับและปริศนา</p>
-                    <span>Adventure</span>
-                </div>
-            </div>
-
-            <div class="card" data-category="rpg">
-                <img src="https://images.unsplash.com/photo-1614294149010-950b698f72c0" alt="เกม RPG">
-                <div class="card-content">
-                    <h3>🐉 Dragon Quest</h3>
-                    <p>สวมบทบาทเป็นฮีโร่และออกผจญภัยปราบมังกร</p>
-                    <span>RPG</span>
-                </div>
-            </div>
-
-            <div class="card" data-category="rpg">
-                <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3" alt="เกม RPG">
-                <div class="card-content">
-                    <h3>🛡️ Fantasy RPG</h3>
-                    <p>สร้างตัวละคร เก็บเลเวล และต่อสู้กับเหล่ามอนสเตอร์</p>
-                    <span>RPG</span>
-                </div>
-            </div>
+            <button class="filter-btn" data-category="adventure">
+                🌎 Adventure
+            </button>
 
         </div>
+
+        <section class="gallery">
+
+            <div class="card" data-category="action">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
+                </div>
+
+                <div class="card-content">
+                    <span>⚔️ ACTION</span>
+                    <h3>Shadow Warrior</h3>
+                    <p>นักรบเงาผู้ต่อสู้กับศัตรูในโลกแห่งความมืด</p>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="action">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">
+                </div>
+
+                <div class="card-content">
+                    <span>⚔️ ACTION</span>
+                    <h3>Battle Arena</h3>
+                    <p>สนามต่อสู้ที่ผู้กล้าต้องใช้พลังและความสามารถ</p>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="fantasy">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23">
+                </div>
+
+                <div class="card-content">
+                    <span>🐉 FANTASY</span>
+                    <h3>Dragon Kingdom</h3>
+                    <p>อาณาจักรลึกลับที่เต็มไปด้วยมังกรและเวทมนตร์</p>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="fantasy">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401">
+                </div>
+
+                <div class="card-content">
+                    <span>🐉 FANTASY</span>
+                    <h3>Magic World</h3>
+                    <p>โลกแห่งเวทมนตร์ที่เต็มไปด้วยความลึกลับ</p>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="adventure">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+                </div>
+
+                <div class="card-content">
+                    <span>🌎 ADVENTURE</span>
+                    <h3>Lost World</h3>
+                    <p>ออกเดินทางค้นหาดินแดนที่ไม่มีใครเคยพบ</p>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="adventure">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b">
+                </div>
+
+                <div class="card-content">
+                    <span>🌎 ADVENTURE</span>
+                    <h3>Mountain Quest</h3>
+                    <p>การเดินทางผ่านภูเขาเพื่อค้นหาความลับที่ซ่อนอยู่</p>
+                </div>
+            </div>
+
+        </section>
 
     </main>
 
     <footer>
-        <p>🎮 GAME ZONE | เว็บไซต์แนะนำเกม</p>
+        <p>✦ ANIME ADVENTURE ✦</p>
+        <small>Explore • Fight • Discover</small>
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
+```
 ```
