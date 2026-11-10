@@ -1,41 +1,160 @@
-```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOOD PARADISE</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สารานุกรมสัตว์โลกน่ารู้ (Animal Encyclopedia)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Prompt -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
 
-<header>
-    <h1>🍜 FOOD PARADISE</h1>
-    <p>ค้นพบเมนูอาหารแสนอร่อยจากทั่วทุกมุมโลก</p>
-    <p class="sub">GOOD FOOD • GOOD MOOD</p>
-</header>
+  <!-- Header Section -->
+  <header class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 py-12 px-4 shadow-lg text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+        🌿 สารานุกรมสัตว์โลกน่ารู้
+      </h1>
+      <p class="text-emerald-100 text-base md:text-lg max-w-2xl mx-auto font-light">
+        แหล่งรวบรวมข้อมูลและภาพความน่ารักของสัตว์หลากหลายสายพันธุ์ทั่วโลก เลือกกรองดูตามหมวดหมู่ที่คุณสนใจได้เลย!
+      </p>
+    </div>
+  </header>
 
-<main>
-    <h2>🍽️ เมนูอาหารแนะนำ</h2>
+  <!-- Main Content Area -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
 
-    <div class="filters">
-        <button class="active" data-category="all">ทั้งหมด</button>
-        <button data-category="thai">🇹🇭 อาหารไทย</button>
-        <button data-category="japan">🍣 อาหารญี่ปุ่น</button>
-        <button data-category="korea">🥢 อาหารเกาหลี</button>
-        <button data-category="dessert">🍰 ของหวาน</button>
+    <!-- Filter Buttons Section -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button onclick="filterAnimals('all')" class="filter-btn active bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-md transform hover:-translate-y-0.5" data-filter="all">
+        🐾 ทั้งหมด
+      </button>
+      <button onclick="filterAnimals('mammals')" class="filter-btn bg-slate-800 hover:bg-emerald-500 text-slate-300 hover:text-white font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-md transform hover:-translate-y-0.5 border border-slate-700" data-filter="mammals">
+        🦁 สัตว์เลี้ยงลูกด้วยนม
+      </button>
+      <button onclick="filterAnimals('birds')" class="filter-btn bg-slate-800 hover:bg-emerald-500 text-slate-300 hover:text-white font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-md transform hover:-translate-y-0.5 border border-slate-700" data-filter="birds">
+        🦅 สัตว์ปีก
+      </button>
+      <button onclick="filterAnimals('aquatic')" class="filter-btn bg-slate-800 hover:bg-emerald-500 text-slate-300 hover:text-white font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-md transform hover:-translate-y-0.5 border border-slate-700" data-filter="aquatic">
+        🐬 สัตว์น้ำ
+      </button>
     </div>
 
-    <section class="gallery">
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="gallery">
 
-        <div class="card" data-category="thai">
-            <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=500" alt="ผัดไทย">
-            <div class="content">
-                <span>อาหารไทย</span>
-                <h3>🍜 ผัดไทย</h3>
-                <p>อาหารไทยยอดนิยม รสชาติเปรี้ยวหวานกลมกล่อม</p>
-            </div>
+      <!-- Card 1: Lion -->
+      <div class="animal-card mammals bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 border border-slate-700 transform hover:-translate-y-2 flex flex-col" data-category="mammals">
+        <div class="overflow-hidden h-48">
+          <img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&w=600&q=80" alt="สิงโต" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
         </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <span class="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 mb-2 border border-amber-500/20">สัตว์เลี้ยงลูกด้วยนม</span>
+          <h3 class="text-xl font-bold text-white mb-1">สิงโต (Lion)</h3>
+          <p class="text-slate-400 text-sm flex-grow">เจ้าแห่งป่าไม้ มีสังคมแบบฝูง สัตว์กินเนื้อที่มีเสียงคำรามอันทรงพลัง</p>
+        </div>
+      </div>
 
-        <div class="card" data-category="thai">
-            <img src="https://images.unsplash.com/photo-154759218
+      <!-- Card 2: Eagle -->
+      <div class="animal-card birds bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 border border-slate-700 transform hover:-translate-y-2 flex flex-col" data-category="birds">
+        <div class="overflow-hidden h-48">
+          <img src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?auto=format&fit=crop&w=600&q=80" alt="นกอินทรี" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <span class="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 mb-2 border border-blue-500/20">สัตว์ปีก</span>
+          <h3 class="text-xl font-bold text-white mb-1">นกอินทรี (Eagle)</h3>
+          <p class="text-slate-400 text-sm flex-grow">นกล่าเหยื่อขนาดใหญ่ มีสายตาที่คมกริบและทักษะการบินโฉบเหยื่ออย่างรวดเร็ว</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Dolphin -->
+      <div class="animal-card aquatic bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 border border-slate-700 transform hover:-translate-y-2 flex flex-col" data-category="aquatic">
+        <div class="overflow-hidden h-48">
+          <img src="https://images.unsplash.com/photo-1570481662006-a3a1374699e8?auto=format&fit=crop&w=600&q=80" alt="โลมา" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <span class="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 mb-2 border border-cyan-500/20">สัตว์น้ำ</span>
+          <h3 class="text-xl font-bold text-white mb-1">โลมา (Dolphin)</h3>
+          <p class="text-slate-400 text-sm flex-grow">สัตว์น้ำอัจฉริยะ ขี้เล่น สื่อสารด้วยคลื่นเสียงความถี่สูง มีนิสัยเป็นมิตร</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Panda -->
+      <div class="animal-card mammals bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 border border-slate-700 transform hover:-translate-y-2 flex flex-col" data-category="mammals">
+        <div class="overflow-hidden h-48">
+          <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef9?auto=format&fit=crop&w=600&q=80" alt="แพนด้า" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <span class="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 mb-2 border border-amber-500/20">สัตว์เลี้ยงลูกด้วยนม</span>
+          <h3 class="text-xl font-bold text-white mb-1">แพนด้า (Panda)</h3>
+          <p class="text-slate-400 text-sm flex-grow">หมีขั้วไผ่ยอดนิยม ชอบกินต้นไผ่เป็นอาหารหลัก มีเอกลักษณ์คือรอบดวงตาสีดำ</p>
+        </div>
+      </div>
+
+      <!-- Card 5: Penguin -->
+      <div class="animal-card birds bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 border border-slate-700 transform hover:-translate-y-2 flex flex-col" data-category="birds">
+        <div class="overflow-hidden h-48">
+          <img src="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?auto=format&fit=crop&w=600&q=80" alt="เพนกวิน" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <span class="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 mb-2 border border-blue-500/20">สัตว์ปีก</span>
+          <h3 class="text-xl font-bold text-white mb-1">เพนกวิน (Penguin)</h3>
+          <p class="text-slate-400 text-sm flex-grow">นกที่ไม่สามารถบินได้ แต่ออกแบบมาให้ว่ายน้ำได้อย่างคล่องแคล่วในเขตหนาว</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Sea Turtle -->
+      <div class="animal-card aquatic bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 border border-slate-700 transform hover:-translate-y-2 flex flex-col" data-category="aquatic">
+        <div class="overflow-hidden h-48">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="เต่าทะเล" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <span class="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 mb-2 border border-cyan-500/20">สัตว์น้ำ</span>
+          <h3 class="text-xl font-bold text-white mb-1">เต่าทะเล (Sea Turtle)</h3>
+          <p class="text-slate-400 text-sm flex-grow">สัตว์โบราณแห่งมหาสมุทร มีกระดองแข็งแรง ท่องเที่ยวไกลหลายพันกิโลเมตร</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-slate-500 text-sm mt-auto">
+    <p>© 2026 สารานุกรมสัตว์โลกน่ารู้ - เว็บไซต์รายวิชาการสร้างเว็บไซต์</p>
+  </footer>
+
+  <!-- JavaScript Code for Filtering -->
+  <script>
+    function filterAnimals(category) {
+      // 1. จัดการคลาส active สำหรับปุ่มกด
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-emerald-500', 'text-white');
+          btn.classList.remove('bg-slate-800', 'text-slate-300');
+        } else {
+          btn.classList.remove('bg-emerald-500', 'text-white');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+
+      // 2. จัดการซ่อน/แสดงการ์ดข้อมูลตามหมวดหมู่
+      const cards = document.querySelectorAll('.animal-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
