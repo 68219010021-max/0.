@@ -4,142 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>🌌 Anime Adventure</title>
-
+    <title>FOOD PARADISE</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="header-content">
-            <p class="small-title">✦ WELCOME TO THE WORLD ✦</p>
+<header>
+    <h1>🍜 FOOD PARADISE</h1>
+    <p>ค้นพบเมนูอาหารแสนอร่อยจากทั่วทุกมุมโลก</p>
+    <p class="sub">GOOD FOOD • GOOD MOOD</p>
+</header>
 
-            <h1>🌌 ANIME ADVENTURE</h1>
+<main>
+    <h2>🍽️ เมนูอาหารแนะนำ</h2>
 
-            <p>
-                รวมโลกแห่งการผจญภัย ตัวละครสุดเท่
-                และเรื่องราวที่น่าตื่นเต้น
-            </p>
-        </div>
-    </header>
+    <div class="filters">
+        <button class="active" data-category="all">ทั้งหมด</button>
+        <button data-category="thai">🇹🇭 อาหารไทย</button>
+        <button data-category="japan">🍣 อาหารญี่ปุ่น</button>
+        <button data-category="korea">🥢 อาหารเกาหลี</button>
+        <button data-category="dessert">🍰 ของหวาน</button>
+    </div>
 
-    <main>
+    <section class="gallery">
 
-        <h2>⚡ เลือกหมวดหมู่</h2>
-
-        <div class="filters">
-
-            <button class="filter-btn active" data-category="all">
-                ✦ ทั้งหมด
-            </button>
-
-            <button class="filter-btn" data-category="action">
-                ⚔️ Action
-            </button>
-
-            <button class="filter-btn" data-category="fantasy">
-                🐉 Fantasy
-            </button>
-
-            <button class="filter-btn" data-category="adventure">
-                🌎 Adventure
-            </button>
-
+        <div class="card" data-category="thai">
+            <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=500" alt="ผัดไทย">
+            <div class="content">
+                <span>อาหารไทย</span>
+                <h3>🍜 ผัดไทย</h3>
+                <p>อาหารไทยยอดนิยม รสชาติเปรี้ยวหวานกลมกล่อม</p>
+            </div>
         </div>
 
-        <section class="gallery">
-
-            <div class="card" data-category="action">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
-                </div>
-
-                <div class="card-content">
-                    <span>⚔️ ACTION</span>
-                    <h3>Shadow Warrior</h3>
-                    <p>นักรบเงาผู้ต่อสู้กับศัตรูในโลกแห่งความมืด</p>
-                </div>
-            </div>
-
-
-            <div class="card" data-category="action">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">
-                </div>
-
-                <div class="card-content">
-                    <span>⚔️ ACTION</span>
-                    <h3>Battle Arena</h3>
-                    <p>สนามต่อสู้ที่ผู้กล้าต้องใช้พลังและความสามารถ</p>
-                </div>
-            </div>
-
-
-            <div class="card" data-category="fantasy">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23">
-                </div>
-
-                <div class="card-content">
-                    <span>🐉 FANTASY</span>
-                    <h3>Dragon Kingdom</h3>
-                    <p>อาณาจักรลึกลับที่เต็มไปด้วยมังกรและเวทมนตร์</p>
-                </div>
-            </div>
-
-
-            <div class="card" data-category="fantasy">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401">
-                </div>
-
-                <div class="card-content">
-                    <span>🐉 FANTASY</span>
-                    <h3>Magic World</h3>
-                    <p>โลกแห่งเวทมนตร์ที่เต็มไปด้วยความลึกลับ</p>
-                </div>
-            </div>
-
-
-            <div class="card" data-category="adventure">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-                </div>
-
-                <div class="card-content">
-                    <span>🌎 ADVENTURE</span>
-                    <h3>Lost World</h3>
-                    <p>ออกเดินทางค้นหาดินแดนที่ไม่มีใครเคยพบ</p>
-                </div>
-            </div>
-
-
-            <div class="card" data-category="adventure">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b">
-                </div>
-
-                <div class="card-content">
-                    <span>🌎 ADVENTURE</span>
-                    <h3>Mountain Quest</h3>
-                    <p>การเดินทางผ่านภูเขาเพื่อค้นหาความลับที่ซ่อนอยู่</p>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>✦ ANIME ADVENTURE ✦</p>
-        <small>Explore • Fight • Discover</small>
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
-```
-```
+        <div class="card" data-category="thai">
+            <img src="https://images.unsplash.com/photo-154759218
